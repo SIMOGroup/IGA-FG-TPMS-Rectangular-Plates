@@ -9,7 +9,6 @@ This repository provides the basic source code of the investigation on the funti
 # Contributors
 - Hung Nguyen-Xuan
 - Kim Q. Tran
-- Quang Huan Nguyen
 
 # References
 H. Nguyen-Xuan, K.Q. Tran, C.H. Thai, J. Lee, Modelling of functionally graded triply periodic minimal surface (FG-TPMS) plates. Compos. Struct. (2023), https://doi.org/10.1016/j.compstruct.2023.116981.
