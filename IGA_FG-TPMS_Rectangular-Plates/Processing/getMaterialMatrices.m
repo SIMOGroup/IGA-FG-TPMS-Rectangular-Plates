@@ -98,28 +98,28 @@ for igp = 1:size(Wg,1)
             dgg= 0;
         case 2
             %J. N. Reddy, A Simple Higher-Order Theory for Laminated Composite Plates,
-            gg = -4*gpt^3/(3*h^2);% Reddy
-            dgg= -4*gpt^2/h^2;
+            gg = gpt-4*gpt^3/(3*h^2);% Reddy
+            dgg= 1-4*gpt^2/h^2;
         case 3
             %R. P. Shimpi, Refined Plate Theory and Its Variants
-            gg = -5*gpt^3/(3*h^2)+gpt/4;%Shimpi
-            dgg=-5*gpt^2/h^2+1/4;
+            gg = gpt-5*gpt^3/(3*h^2)+gpt/4;%Shimpi
+            dgg= 1-5*gpt^2/h^2+1/4;
         case 4
             %H. Nguyen-Xuan, Isogeometric finite element analysis of composite sandwich plates using a higher order shear deformation theory
-            gg = -1/8*gpt-2/h^2*gpt^3+2/h^4*gpt^5;% H. Nguyen-Xuan
-            dgg= -1/8-6/h^2*gpt^2+10/h^4*gpt^4;
+            gg = gpt-1/8*gpt-2/h^2*gpt^3+2/h^4*gpt^5;% H. Nguyen-Xuan
+            dgg= 1-1/8-6/h^2*gpt^2+10/h^4*gpt^4;
         case 5
             % H. X. Nguyen, T. N. Nguyen, A refined quasi-3D isogeometric analysis for functionally graded microplates based on the modified couple stress theory
-            gg = -9*gpt+(10/h^2)*gpt^3+6/(5*h^4)*gpt^5+8/(7*h^6)*gpt^7;%Hoang X. Nguyen
-            dgg=-9+(10/h^2)*3*gpt^2+6/(5*h^4)*5*gpt^4+8/(7*h^6)*7*gpt^6;
+            gg = gpt-9*gpt+(10/h^2)*gpt^3+6/(5*h^4)*gpt^5+8/(7*h^6)*gpt^7;%Hoang X. Nguyen
+            dgg= 1-9+(10/h^2)*3*gpt^2+6/(5*h^4)*5*gpt^4+8/(7*h^6)*7*gpt^6;
         case 6
             %T. N. Nguyen, On the general framework of high order shear deformation theories for laminated composite plate structures: A novel unified approach
-            gg = - (17*gpt^3)/(10*h^2) + (22*gpt^5)/(25*h^4);%Tuan N. Nguyen
-            dgg= - (17*3*gpt^2)/(10*h^2) + (22*5*gpt^4)/(25*h^4);
+            gg = gpt - (17*gpt^3)/(10*h^2) + (22*gpt^5)/(25*h^4);%Tuan N. Nguyen
+            dgg= 1 - (17*3*gpt^2)/(10*h^2) + (22*5*gpt^4)/(25*h^4);
         case 7
             %C. H. Thai, Generalized shear deformation theory for functionally graded isotropic and sandwich plates based on isogeometric approach
-            gg = atan(sin(pi/h*gpt))-gpt;%Chien H. Thai (Computers & Structures)
-            dgg= pi/h*cos(pi/h*gpt)/(1+(sin(pi/h*gpt))^2)-1;
+            gg = atan(sin(pi/h*gpt));%Chien H. Thai (Computers & Structures)
+            dgg= pi/h*cos(pi/h*gpt)/(1+(sin(pi/h*gpt))^2);
         otherwise
             disp('**************************************************');
             disp('Do not appropriate models ');
